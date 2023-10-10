@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Create a New Team:</h3>
+
+    <form class="form new-team-form">
+      <div class="form-group">
+        <label for="team-name">Team Name:</label>
+        <input class="form-input" type="text" id="team-name" name="team-name" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+ <div class="col-md-6">
+    <h3>Join a Current Team:</h3>
+
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">Team ID:</label>
+        <select class="form-input" id="teamId">
+          {{#each teams as |team|}}
+          <option value="{{team.id}}">{{team.team_name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Join</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  {{!-- {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+    {{#each projects as |project|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div> --}}
+
+<script src="./js/profile.js"></script>
+
+<script src="./js/profile.js"></script>

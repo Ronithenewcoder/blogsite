@@ -1,0 +1,104 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>homepage</title>
+<style>
+
+body {
+background: url(/beer-bubbles-abstract-bubbles-yellow-background_3248-267.avif);
+background-size: cover;
+
+}
+
+.anim {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: moveup 5s linear forwards;
+
+}
+@keyframes moveup {
+100%{
+  opacity: 1;
+  transform: translateY(0px);
+}
+}
+
+.beer-hand {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+  
+}
+
+/*.beer-hand {
+  width: 50%;
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+}*/
+
+</style>
+</head>
+
+<body>
+  
+
+<div>
+<img src="/947FF6F6-2D74-484A-8DE7-B6BF31AB005E.png" class = "beer-hand anim">
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="row">
+  {{#each teams as |team|}}
+  <div class="col">
+    <a href="/team/{{id}}">
+    <div class="card" style="background-color: #389393">
+      <div class="card-body" style="color: white;">
+        <h5 class="card-title">{{team_name}}</h5>
+        <p class="card-text">has {{users.length}} guzzler[s].</p>
+        {{#if team.isUserTeam}} 
+        {{!-- <p>your team</p> --}}
+        {{/if}}
+      </div>
+    </div></a>
+  </div>
+  {{/each}}
+</div>
+
+{{!-- <!-- Loop over each object in the projects array -->
+{{#each projects as |project| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
+      needed!
+    </p>
+    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{project.description}}
+    </p>
+  </div>
+</div>
+{{/each}} --}}
+ </body>
+</html>
